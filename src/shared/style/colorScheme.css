@@ -1,0 +1,25 @@
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-global: #1a2029;
+    --bg: #2d3748;
+    --fg: #ffffff;
+  }
+}
+:root[data-color-scheme='dark'] {
+  --bg-global: #1a2029;
+  --bg: #2d3748;
+  --fg: #ffffff;
+}
+
+:root[data-color-scheme='light'] {
+  --bg-global: #ffffff;
+  --bg: #f7fafc;
+  --fg: #1a2029;
+}
+
+@theme {
+  --color-bg-global: var(--bg-global);
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+}
