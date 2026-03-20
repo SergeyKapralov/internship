@@ -1,12 +1,13 @@
 @import 'tailwindcss';
 @import './colorScheme.css';
+@import './fonts.css';
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', 'Inter', sans-serif;
   font-optical-sizing: auto;
   background-color: var(--bg-global);
   color: var(--fg);

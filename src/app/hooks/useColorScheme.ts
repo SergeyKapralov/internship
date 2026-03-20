@@ -1,4 +1,4 @@
-import { useThemeStore } from '../store/usethemeStore';
+import { useThemeStore } from '@shared/lib/store';
 import { useState, useEffect } from 'react';
 
 export const useColorScheme = (): 'light' | 'dark' => {
