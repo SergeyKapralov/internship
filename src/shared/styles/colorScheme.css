@@ -1,37 +1,45 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-global: #1a2029;
-    --fg: #ffffff;
+    --bg: #111827;
+    --fg: #f8f9fa;
     --fg-alternative: #1a2029;
     --disabled: #718096;
     --bg-element: #1f2937;
     --fg-highlight: #3b82f6;
+    --element-secondary: #374151;
   }
 }
 :root[data-color-scheme='dark'] {
   --bg-global: #1a2029;
-  --fg: #ffffff;
+  --bg: #111827;
+  --fg: #f8f9fa;
   --fg-alternative: #1a2029;
   --disabled: #718096;
   --bg-element: #1f2937;
   --fg-highlight: #3b82f6;
+  --element-secondary: #374151;
 }
 
 :root[data-color-scheme='light'] {
   --bg-global: #ffffff;
+  --bg: #fff0f0;
   --fg: #1a2029;
-  --fg-alternative: #ffffff;
+  --fg-alternative: #f8f9fa;
   --disabled: #2d3748;
-  --bg-element: #a855f7;
-  --fg-highlight: #f7fafc;
+  --bg-element: #fff4f2;
+  --fg-highlight: #b83280;
+  --element-secondary: #fed7d7;
 }
 
 @theme {
   --color-bg-global: var(--bg-global);
+  --color-bg: var(--bg);
   --color-fg: var(--fg);
   --color-disabled: var(--disabled);
   --color-element: var(--bg-element);
   --color-element-secondary: #3b82f6;
   --color-fg-alternative: var(--fg-alternative);
   --color-fg-highlight: var(--fg-highlight);
+  --color-element-secondary: var(--element-secondary);
 }

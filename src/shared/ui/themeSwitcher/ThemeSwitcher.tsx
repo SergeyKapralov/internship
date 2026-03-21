@@ -40,7 +40,7 @@ export const ThemeSwitcher = ({
         style={{
           left: indicatorStyle.left,
           width: indicatorStyle.width,
-          height: 'calc(100% - 8px)',
+          height: 'calc(100% - 2px)',
         }}
       />
 
@@ -51,7 +51,7 @@ export const ThemeSwitcher = ({
             buttonsRef.current[index] = el;
           }}
           onClick={() => onThemeChange(theme)}
-          className={`relative z-10 flex h-8 w-8 items-center justify-center rounded-full transition-all ${
+          className={`relative z-10 flex h-6 w-6 items-center justify-center rounded-full transition-all ${
             activeTheme === theme
               ? 'text-gray-900'
               : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900'
