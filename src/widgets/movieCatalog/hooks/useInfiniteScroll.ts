@@ -1,4 +1,3 @@
-// hooks/useInfiniteScroll.ts
 import { useRef, useCallback, useEffect } from 'react';
 
 type TUseInfiniteScrollProps = {

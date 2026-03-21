@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getMovies } from '../lib/api';
-import { useMoviesFilters } from './useMoviesFilters';
+import { useMoviesFilters } from '@entities/movie/hooks';
 import type { TGetMoviesResponse } from '../model/types';
 
 const buildQueryParams = (filters: ReturnType<typeof useMoviesFilters.getState>) => {

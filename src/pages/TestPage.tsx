@@ -2,8 +2,7 @@ import { MovieCatalog } from '@/widgets/movieCatalog';
 
 export const TestPage = () => {
   return (
-    <div>
-      Я тестовая страница, протестируй меня
+    <div className="flex w-full">
       <MovieCatalog />
     </div>
   );

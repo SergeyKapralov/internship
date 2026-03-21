@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useMoviesFilters } from './useMoviesFilters';
+import { useMoviesFilters } from '@entities/movie/hooks';
 
 export const useSyncFiltersWithURL = () => {
   const [searchParams, setSearchParams] = useSearchParams();
