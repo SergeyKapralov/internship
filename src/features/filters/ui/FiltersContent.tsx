@@ -1,7 +1,7 @@
 import { useMoviesFilters } from '@entities/movie/hooks';
 import { RangeInput } from '@/shared/ui';
 
-const GENRES = ['драма', 'комедия', 'ужасы', 'боевик', 'триллер', 'мелодрама', 'фантастика'];
+const genres = ['драма', 'комедия', 'ужасы', 'боевик', 'триллер', 'мелодрама', 'фантастика'];
 
 export const FiltersContent = () => {
   const filters = useMoviesFilters();
@@ -19,7 +19,7 @@ export const FiltersContent = () => {
       <div className="mb-4">
         <h3 className="mb-1 text-sm font-semibold">Жанры</h3>
         <div className="flex flex-wrap gap-2">
-          {GENRES.map((genre) => (
+          {genres.map((genre) => (
             <label key={genre} className="flex cursor-pointer items-center gap-1 text-sm">
               <input
                 type="checkbox"
@@ -39,6 +39,8 @@ export const FiltersContent = () => {
         to={filters.yearMax}
         onFromChange={(val) => filters.setYearRange(val, filters.yearMax)}
         onToChange={(val) => filters.setYearRange(filters.yearMin, val)}
+        min={1990}
+        max={2026}
       />
 
       <RangeInput
@@ -47,6 +49,8 @@ export const FiltersContent = () => {
         to={filters.ratingMax}
         onFromChange={(val) => filters.setRatingRange(val, filters.ratingMax)}
         onToChange={(val) => filters.setRatingRange(filters.ratingMin, val)}
+        min={0}
+        max={10}
       />
 
       <button
