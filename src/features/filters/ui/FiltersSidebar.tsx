@@ -6,7 +6,7 @@ export const FiltersSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
+    <div className="h-fit">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="bg-fg-highlight fixed right-4 bottom-4 z-10 flex items-center gap-2 rounded-full px-4 py-2 shadow-lg md:hidden"
@@ -16,7 +16,7 @@ export const FiltersSidebar = () => {
         {isOpen ? <ChevronDown className="h-4 w-4" /> : <ChevronUp className="h-4 w-4" />}
       </button>
 
-      <aside className="bg-bg hidden h-full w-64 overflow-y-auto rounded p-4 md:block md:w-72">
+      <aside className="bg-bg hidden h-full overflow-y-auto rounded p-4 md:block">
         <h2 className="mb-4 text-lg font-bold">Фильтры</h2>
         <FiltersContent />
       </aside>
@@ -40,6 +40,6 @@ export const FiltersSidebar = () => {
           </aside>
         </>
       )}
-    </>
+    </div>
   );
 };

@@ -4,24 +4,26 @@ import { useMoviesFilters } from '@entities/movie/hooks';
 import type { TGetMoviesResponse } from '../model/types';
 
 const buildQueryParams = (filters: ReturnType<typeof useMoviesFilters.getState>) => {
-  const params: Record<string, string> = {};
+  const params: Record<string, string | string[]> = {};
 
   if (filters.genres.length) {
-    params['genres.name'] = filters.genres.map((g) => `+${g}`).join('&genres.name=');
+    params['genres.name'] = filters.genres.map((g) => `+${g}`);
   }
+
   if (filters.yearMin || filters.yearMax) {
     const from = filters.yearMin ?? '';
     const to = filters.yearMax ?? '';
     params.year = `${from}${from && to ? '-' : ''}${to}`;
   }
+
   if (filters.ratingMin || filters.ratingMax) {
     const from = filters.ratingMin ?? '';
     const to = filters.ratingMax ?? '';
     params['rating.kp'] = `${from}${from && to ? '-' : ''}${to}`;
   }
+
   return params;
 };
-
 export const useInfiniteMovies = () => {
   const filters = useMoviesFilters();
 

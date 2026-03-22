@@ -20,7 +20,6 @@ export const useFavoriteMovies = () => {
       queryKey: ['movie', movieId],
       queryFn: () => apiClient<TMovie>(`v1.4/movie/${movieId}`),
       enabled: !!movieId,
-      staleTime: 5 * 60 * 1000,
     })),
   });
 

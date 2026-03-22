@@ -6,6 +6,7 @@ type TCompareStore = {
   toggleCompare: (movieId: string) => void;
   isCompared: (movieId: string) => boolean;
   getComparedMovies: () => string[];
+  clear: () => void;
 };
 
 const COMPARED_KEY = 'compared';
@@ -40,5 +41,10 @@ export const useCompareStore = create<TCompareStore>((set, get) => ({
 
   getComparedMovies: () => {
     return get().compared;
+  },
+
+  clear: () => {
+    set({ compared: [] });
+    setToSessionStorage(COMPARED_KEY, []);
   },
 }));
