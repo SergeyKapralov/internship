@@ -7,9 +7,15 @@ type TProps = {
   data: TShortMovie;
   isFavorite?: boolean;
   isCompared?: boolean;
+  enableButton?: boolean;
 };
 
-export const MovieCard = ({ data, isFavorite = false, isCompared = false }: TProps) => {
+export const MovieCard = ({
+  data,
+  isFavorite = false,
+  isCompared = false,
+  enableButton = true,
+}: TProps) => {
   const { id, alt, src, released, score, title } = data;
   const [imgError, setImgError] = useState(false);
 
@@ -49,35 +55,38 @@ export const MovieCard = ({ data, isFavorite = false, isCompared = false }: TPro
         </div>
       </div>
       <div className="flex gap-1 md:gap-2">
-        <button
-          data-action="favorite"
-          className={cn(
-            'flex items-center justify-center rounded-md p-2 transition-colors',
-            'md:gap-2',
-            isFavorite
-              ? 'bg-fg-highlight text-fg-alternative'
-              : 'bg-element-secondary text-fg hover:bg-fg-highlight/80 hover:text-fg-alternative'
-          )}
-          aria-label="Add to favorites"
-        >
-          <Heart className={cn('h-4 w-4 md:h-4 md:w-4', isFavorite && 'fill-current')} />
-          <span className="hidden text-xs md:inline-block">Favorite</span>
-        </button>
-
-        <button
-          data-action="compare"
-          className={cn(
-            'flex items-center justify-center rounded-md p-2 transition-colors',
-            'md:gap-2',
-            isCompared
-              ? 'bg-fg-highlight'
-              : 'bg-disabled text-fg-alternative hover:bg-fg-highlight/80 hover:text-white'
-          )}
-          aria-label="Add to compare"
-        >
-          <GitCompare className="h-4 w-4 md:h-4 md:w-4" />
-          <span className="hidden text-xs md:inline-block">Compare</span>
-        </button>
+        {enableButton && (
+          <button
+            data-action="favorite"
+            className={cn(
+              'flex items-center justify-center rounded-md p-2 transition-colors',
+              'md:gap-2',
+              isFavorite
+                ? 'bg-fg-highlight text-fg-alternative'
+                : 'bg-element-secondary text-fg hover:bg-fg-highlight/80 hover:text-fg-alternative'
+            )}
+            aria-label="Add to favorites"
+          >
+            <Heart className={cn('h-4 w-4 md:h-4 md:w-4', isFavorite && 'fill-current')} />
+            <span className="hidden text-xs md:inline-block">Favorite</span>
+          </button>
+        )}
+        {enableButton && (
+          <button
+            data-action="compare"
+            className={cn(
+              'flex items-center justify-center rounded-md p-2 transition-colors',
+              'md:gap-2',
+              isCompared
+                ? 'bg-fg-highlight'
+                : 'bg-disabled text-fg-alternative hover:bg-fg-highlight/80 hover:text-white'
+            )}
+            aria-label="Add to compare"
+          >
+            <GitCompare className="h-4 w-4 md:h-4 md:w-4" />
+            <span className="hidden text-xs md:inline-block">Compare</span>
+          </button>
+        )}
       </div>
     </div>
   );

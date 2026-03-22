@@ -1,6 +1,6 @@
 import { MovieCatalog } from '@/widgets/movieCatalog';
 
-export const TestPage = () => {
+export const ListPage = () => {
   return (
     <div className="flex w-full">
       <MovieCatalog />

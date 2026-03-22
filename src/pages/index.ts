@@ -1,1 +1,3 @@
-export * from './TestPage';
+export * from './ListPage';
+export * from './MoviePage';
+export * from './FavoritesPage';

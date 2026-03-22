@@ -12,7 +12,7 @@ export const getMovies = async (
     ...(nextCursor && { next: nextCursor }),
   }).toString();
 
-  const data = await apiClient<TMoviesResponse>(`/movie?${query}`);
+  const data = await apiClient<TMoviesResponse>(`v1.5/movie?${query}`);
 
   const movies: TShortMovie[] = data.docs.map((doc) => ({
     id: String(doc.id),

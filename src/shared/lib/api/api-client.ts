@@ -1,5 +1,5 @@
 export const apiClient = async <T>(path: string, options?: RequestInit): Promise<T> => {
-  const res = await fetch(`https://api.poiskkino.dev/v1.5${path}`, {
+  const res = await fetch(`https://api.poiskkino.dev/${path}`, {
     ...options,
     headers: {
       'X-API-KEY': 'XMFA7V4-RSB44M0-MTSRYKK-7ATFNBQ',

@@ -1,14 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
-import { TestPage } from '@/pages';
+import { ListPage, MoviePage, FavoritesPage } from '@/pages';
 import { Layout } from '@/widgets/layout';
 
 function App() {
   return (
     <Layout>
       <Routes>
-        <Route index element={<TestPage />}></Route>
-        <Route path="/movie/:id" element={<div>Тут будет страница нажатого фильма</div>}></Route>
-        <Route path="/favorites" element={<div>тут будет список избранных фильмов</div>}></Route>
+        <Route index element={<ListPage />}></Route>
+        <Route path="/movie/:id" element={<MoviePage />}></Route>
+        <Route path="/favorites" element={<FavoritesPage />}></Route>
       </Routes>
     </Layout>
   );
